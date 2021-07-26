@@ -31,14 +31,28 @@ class Game:
   #New Game Command
   def newGame(self):
     self.start.withdraw()
+    #Makes a random 8 digit seed
     random.seed(random.randint(10000000,100000000))
     self.office()
   
+  #Loads the player game data
   def loadGame(self):
     print("TEST")
   
+  #The player's office
   def office(self):
-    print('TEST')
+    #Element inits
+    self.playerOffice = tkin.Toplevel()
+    self.playerOffice.title('Cubical')
+    self.playerOffice.geometry('400x450')
+    self.playerOffice.iconphoto(False, self.icon)
+    self.poff = tkin.PhotoImage(file = 'Images/Office.png')
+    self.frame = tkin.Frame(self.playerOffice)
+    self.image = tkin.Label(self.frame, image = self.poff)
+    #Element packing
+    self.image.pack(side='top')
+    self.frame.pack(side='top')
+
 
 
 #Makes the game work
