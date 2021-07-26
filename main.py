@@ -3,6 +3,7 @@ import tkinter as tkin
 import pickle
 
 #Varliables
+seed = 0
 
 #The initializer window
 class Game:
