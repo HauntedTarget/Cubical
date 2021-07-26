@@ -44,16 +44,38 @@ class Game:
     #Element inits
     self.playerOffice = tkin.Toplevel()
     self.playerOffice.title('Cubical')
-    self.playerOffice.geometry('400x450')
+    self.playerOffice.geometry('400x470')
     self.playerOffice.iconphoto(False, self.icon)
     self.poff = tkin.PhotoImage(file = 'Images/Office.png')
     self.frame = tkin.Frame(self.playerOffice)
+    self.frame2 = tkin.Frame(self.playerOffice)
+    self.frame3 = tkin.Frame(self.playerOffice)
     self.image = tkin.Label(self.frame, image = self.poff)
+    self.button1 = tkin.Button(self.frame2, text='Use computer',command = self.computerOn)
+    self.button2 = tkin.Button(self.frame2, text='Use File Cabanet',command = self.cabanetOpen)
+    self.button3 = tkin.Button(self.frame3, text='Go To Hallway', command = self.poToHall)
     #Element packing
     self.image.pack(side='top')
     self.frame.pack(side='top')
+    self.button1.pack(side='left')
+    self.button2.pack(side='left')
+    self.frame2.pack(side='top')
+    self.button3.pack(side='top')
+    self.frame3.pack(side='top')
+  
+  #Sends the player to the computer screen window
+  def computerOn(self):
+    print('TEST')
+  
+  #Sends the player to the file cabanet(Store stuff from inventory to make space)
+  def cabanetOpen(self):
+    print('TEST')
+  
+  #Sends the player to the hall
+  def poToHall(self):
+    print('TEST')
 
 
 
-#Makes the game work
+#Makes the game start
 gamestart = Game()
