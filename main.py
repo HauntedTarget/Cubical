@@ -65,7 +65,8 @@ class Game:
   
   #Sends the player to the computer screen window
   def computerOn(self):
-    print('TEST')
+    self.playerOffice.destroy()
+    self.coms()
   
   #Sends the player to the file cabanet(Store stuff from inventory to make space)
   def cabanetOpen(self):
@@ -74,6 +75,19 @@ class Game:
   #Sends the player to the hall
   def poToHall(self):
     print('TEST')
+  
+  def coms(self):
+    #Element inits
+    self.computer = tkin.Toplevel()
+    self.computer.title('Cubical')
+    self.computer.geometry('400x470')
+    self.computer.iconphoto(False, self.icon)
+    self.compng = tkin.PhotoImage(file = 'Images/Computer_V1.png')
+    self.frame = tkin.Frame(self.computer)
+    self.image = tkin.Label(self.frame, image = self.compng)
+    #Element packing
+    self.image.pack(side='top')
+    self.frame.pack(side='top')
 
 
 
