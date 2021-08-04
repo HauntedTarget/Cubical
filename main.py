@@ -74,7 +74,8 @@ class Game:
   
   #Sends the player to the hall
   def poToHall(self):
-    print('TEST')
+    self.playerOffice.destroy()
+    self.hall()
   
   def coms(self):
     #Element inits
@@ -85,6 +86,19 @@ class Game:
     self.compng = tkin.PhotoImage(file = 'Images/Computer_V1.png')
     self.frame = tkin.Frame(self.computer)
     self.image = tkin.Label(self.frame, image = self.compng)
+    #Element packing
+    self.image.pack(side='top')
+    self.frame.pack(side='top')
+
+  def hall(self):
+    #Element inits
+    self.hallway = tkin.Toplevel()
+    self.hallway.title('Cubical')
+    self.hallway.geometry('400x470')
+    self.hallway.iconphoto(False, self.icon)
+    self.hallpic = tkin.PhotoImage(file = 'Images/Hallway.png')
+    self.frame = tkin.Frame(self.hallway)
+    self.image = tkin.Label(self.frame, image = self.hallpic)
     #Element packing
     self.image.pack(side='top')
     self.frame.pack(side='top')
