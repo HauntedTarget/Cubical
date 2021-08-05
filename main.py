@@ -32,7 +32,7 @@ class Game:
   def newGame(self):
     self.start.withdraw()
     #Makes a random 8 digit seed
-    random.seed(random.randint(10000000,100000000))
+    random.seed(random.randint(100,1000))
     self.office()
   
   #Loads the player game data
